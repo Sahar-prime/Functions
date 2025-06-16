@@ -297,36 +297,23 @@ void main()
 
 #ifdef SARRUS_METHOD
 //определитель порядка методом Саррюса:
-
-// Функция для вычисления определителя матрицы 3x3 методом Саррюса
-int determinantSarrus(const int matrix[3][3]) 
-{
-    int det = 0;
-
-    // Основная формула метода Саррюса
-    det = matrix[0][0] * matrix[1][1] * matrix[2][2] +
-        matrix[0][1] * matrix[1][2] * matrix[2][0] +
-        matrix[0][2] * matrix[1][0] * matrix[2][1] -
-        matrix[0][2] * matrix[1][1] * matrix[2][0] -
-        matrix[0][0] * matrix[1][2] * matrix[2][1] -
-        matrix[0][1] * matrix[1][0] * matrix[2][2];
-
-    return det;
-}
-
 int main()
 {
     setlocale(LC_ALL, "");
-    // Пример матрицы 3x3
-    int matrix[3][3] = 
-    {
+    int matrix[3][3] =
+    { 
         {1, 2, 3},
         {4, 5, 6},
         {7, 8, 9}
     };
 
-    // Вычисление определителя
-    int det = determinantSarrus(matrix);
+    int det = 
+        matrix[0][0] * matrix[1][1] * matrix[2][2] +
+        matrix[0][1] * matrix[1][2] * matrix[2][0] +
+        matrix[0][2] * matrix[1][0] * matrix[2][1] -
+        matrix[0][2] * matrix[1][1] * matrix[2][0] -
+        matrix[0][0] * matrix[1][2] * matrix[2][1] -
+        matrix[0][1] * matrix[1][0] * matrix[2][2];
 
     cout << "Определитель матрицы: " << det << endl;
 }
