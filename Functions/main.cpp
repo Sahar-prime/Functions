@@ -8,6 +8,11 @@ using namespace std;
 //#define TASK_4
 //#define TASK_5
 
+//#define UROK
+//#define SARRUS_METHOD
+
+#define delimeter "\n--------------------------------\n"
+
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
 {
@@ -240,6 +245,92 @@ int main() {
     findDuplicates(array, rows);
 }
 #endif //TASK_5
+
+#ifdef UROK
+void main() 
+{
+    setlocale(LC_ALL, "");
+    const int rows = 3;
+    const int cols = 3;
+    int array[rows][cols] =
+    {
+        {3, 7, 1},
+        {8, 4, 9},
+        {2, 5, 6}
+    };
+
+    for (int i = 0; i < rows; i++)
+    {
+        
+        for (int j = 0; j < cols; j++) 
+        {
+            cout << array[i][j] << "\t";
+        }
+        cout << endl;
+        cout << endl;
+    }
+    cout << delimeter << endl;
+
+    for (int i = 0; i < rows; i++) 
+    {
+        int buffer = array[i][0];
+        for (int j = 1; j < cols; j++) 
+        {
+            array[i][j-1] = buffer;
+        }
+        array[i][cols - 1] = buffer;
+    }
+
+    for (int i = 0; i < rows; i++)
+    {
+
+        for (int j = 0; j < cols; j++)
+        {
+            cout << array[i][j] << "\t";
+        }
+        cout << endl;
+        cout << endl;
+    }
+
+}
+#endif //UROK
+
+#ifdef SARRUS_METHOD
+//определитель порядка методом Саррюса:
+
+// Функция для вычисления определителя матрицы 3x3 методом Саррюса
+int determinantSarrus(const int matrix[3][3]) 
+{
+    int det = 0;
+
+    // Основная формула метода Саррюса
+    det = matrix[0][0] * matrix[1][1] * matrix[2][2] +
+        matrix[0][1] * matrix[1][2] * matrix[2][0] +
+        matrix[0][2] * matrix[1][0] * matrix[2][1] -
+        matrix[0][2] * matrix[1][1] * matrix[2][0] -
+        matrix[0][0] * matrix[1][2] * matrix[2][1] -
+        matrix[0][1] * matrix[1][0] * matrix[2][2];
+
+    return det;
+}
+
+int main()
+{
+    setlocale(LC_ALL, "");
+    // Пример матрицы 3x3
+    int matrix[3][3] = 
+    {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    // Вычисление определителя
+    int det = determinantSarrus(matrix);
+
+    cout << "Определитель матрицы: " << det << endl;
+}
+#endif //SARRUS_METHOD
 
 
 /*
