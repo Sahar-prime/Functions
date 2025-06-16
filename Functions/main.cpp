@@ -231,7 +231,8 @@ void findDuplicates(const int array[][5], int rows)
     }
 }
 
-int main() {
+int main() 
+{
     const int rows = 4;
     const int cols = 5;
     int array[rows][cols] = 
