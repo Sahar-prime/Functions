@@ -124,11 +124,22 @@ int main()
 #endif //TASK_2
 
 #ifdef TASK_3
-// Функция для сортировки двумерного массива
-void sort2DArray(int array[][3], int rows, int cols) 
+int main()
 {
+    const int rows = 3;
+    const int cols = 3;
+    int array[rows][cols] =
+    {
+        {5, 3, 8},
+        {2, 7, 1},
+        {4, 9, 6}
+    };
+
+    // Общее количество элементов
     int totalElements = rows * cols;
-    for (int i = 0; i < totalElements - 1; ++i) 
+
+    // Сортировка пузырьком
+    for (int i = 0; i < totalElements - 1; ++i)
     {
         for (int j = 0; j < totalElements - i - 1; ++j)
         {
@@ -137,7 +148,7 @@ void sort2DArray(int array[][3], int rows, int cols)
             int nextRow = (j + 1) / cols;
             int nextCol = (j + 1) % cols;
 
-            if (array[currentRow][currentCol] > array[nextRow][nextCol]) 
+            if (array[currentRow][currentCol] > array[nextRow][nextCol])
             {
                 // Обмен значениями
                 int temp = array[currentRow][currentCol];
@@ -146,25 +157,12 @@ void sort2DArray(int array[][3], int rows, int cols)
             }
         }
     }
-}
 
-int main() 
-{
-    const int rows = 3;
-    const int cols = 3;
-    int array[rows][cols] = 
-    {
-        {5, 3, 8},
-        {2, 7, 1},
-        {4, 9, 6}
-    };
-
-    sort2DArray(array, rows, cols);
-
+    // Вывод отсортированного массива
     cout << "Sorted array:" << endl;
-    for (int i = 0; i < rows; ++i) 
+    for (int i = 0; i < rows; ++i)
     {
-        for (int j = 0; j < cols; ++j) 
+        for (int j = 0; j < cols; ++j)
         {
             cout << array[i][j] << " ";
         }
@@ -210,11 +208,11 @@ int main()
 #endif //TASK_4
 
 #ifdef TASK_5
-void findDuplicates(const int array[][5], int rows) 
+void findDuplicates(const int array[][5], int rows)
 {
     int count[16] = { 0 };
 
-    for (int i = 0; i < rows; ++i) 
+    for (int i = 0; i < rows; ++i)
     {
         for (int j = 0; j < 5; ++j)
         {
@@ -222,7 +220,7 @@ void findDuplicates(const int array[][5], int rows)
         }
     }
 
-    for (int i = 0; i < 16; ++i) 
+    for (int i = 0; i < 16; ++i)
     {
         if (count[i] > 1)
         {
@@ -231,11 +229,11 @@ void findDuplicates(const int array[][5], int rows)
     }
 }
 
-int main() 
+int main()
 {
     const int rows = 4;
     const int cols = 5;
-    int array[rows][cols] = 
+    int array[rows][cols] =
     {
         {1, 2, 3, 4, 5},
         {6, 7, 0, 9, 1},
