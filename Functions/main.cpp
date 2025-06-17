@@ -2,16 +2,12 @@
 #include <ctime>
 using namespace std;
 
+//#define DZ
 //#define TASK_1
 //#define TASK_2
 //#define TASK_3
 //#define TASK_4
-//#define TASK_5
-
-//#define UROK
 //#define SARRUS_METHOD
-
-#define delimeter "\n--------------------------------\n"
 
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
@@ -207,93 +203,6 @@ int main()
 }
 #endif //TASK_4
 
-#ifdef TASK_5
-void findDuplicates(const int array[][5], int rows)
-{
-    int count[16] = { 0 };
-
-    for (int i = 0; i < rows; ++i)
-    {
-        for (int j = 0; j < 5; ++j)
-        {
-            count[array[i][j]]++;
-        }
-    }
-
-    for (int i = 0; i < 16; ++i)
-    {
-        if (count[i] > 1)
-        {
-            cout << "Value: " << i << ", Count: " << count[i] << endl;
-        }
-    }
-}
-
-int main()
-{
-    const int rows = 4;
-    const int cols = 5;
-    int array[rows][cols] =
-    {
-        {1, 2, 3, 4, 5},
-        {6, 7, 0, 9, 1},
-        {10, 11, 12, 13, 2},
-        {14, 15, 0, 1, 3}
-    };
-
-    findDuplicates(array, rows);
-}
-#endif //TASK_5
-
-#ifdef UROK
-void main() 
-{
-    setlocale(LC_ALL, "");
-    const int rows = 3;
-    const int cols = 3;
-    int array[rows][cols] =
-    {
-        {3, 7, 1},
-        {8, 4, 9},
-        {2, 5, 6}
-    };
-
-    for (int i = 0; i < rows; i++)
-    {
-        
-        for (int j = 0; j < cols; j++) 
-        {
-            cout << array[i][j] << "\t";
-        }
-        cout << endl;
-        cout << endl;
-    }
-    cout << delimeter << endl;
-
-    for (int i = 0; i < rows; i++) 
-    {
-        int buffer = array[i][0];
-        for (int j = 1; j < cols; j++) 
-        {
-            array[i][j-1] = buffer;
-        }
-        array[i][cols - 1] = buffer;
-    }
-
-    for (int i = 0; i < rows; i++)
-    {
-
-        for (int j = 0; j < cols; j++)
-        {
-            cout << array[i][j] << "\t";
-        }
-        cout << endl;
-        cout << endl;
-    }
-
-}
-#endif //UROK
-
 #ifdef SARRUS_METHOD
 //определитель порядка методом Саррюса:
 int main()
@@ -318,7 +227,65 @@ int main()
 }
 #endif //SARRUS_METHOD
 
+#ifdef DZ
 //написать алгоритм умножения матриц
+
+// Функция для умножения двух матриц
+void multiplyMatrices(int matrix1[2][3], int matrix2[3][2], int result[2][2]) 
+{
+    for (int i = 0; i < 2; ++i) 
+    {
+        for (int j = 0; j < 2; ++j) 
+        {
+            result[i][j] = 0;
+            for (int k = 0; k < 3; ++k) 
+            {
+                result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
+    }
+}
+
+// Функция для вывода матрицы
+void printMatrix(int matrix[2][2])
+{
+    for (int i = 0; i < 2; ++i) 
+    {
+        for (int j = 0; j < 2; ++j)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    // Пример матриц
+    int matrix1[2][3] =
+    {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    int matrix2[3][2] = 
+    {
+        {7, 8},
+        {9, 10},
+        {11, 12}
+    };
+
+    int result[2][2];
+
+    // Умножение матриц
+    multiplyMatrices(matrix1, matrix2, result);
+
+    // Вывод результата
+    cout << "Result of matrix multiplication:" << endl;
+    printMatrix(result);
+}
+
+#endif //DZ
 
 /*
 Функции — это блоки кода, выполняющие определенные операции.
