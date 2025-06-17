@@ -2,7 +2,7 @@
 #include <ctime>
 using namespace std;
 
-//#define DZ
+//#define MATRIX_MULTIPLICATION
 //#define TASK_1
 //#define TASK_2
 //#define TASK_3
@@ -227,7 +227,7 @@ int main()
 }
 #endif //SARRUS_METHOD
 
-#ifdef DZ
+#ifdef MATRIX_MULTIPLICATION
 //написать алгоритм умножения матриц
 
 // Функция для умножения двух матриц
@@ -285,7 +285,7 @@ int main()
     printMatrix(result);
 }
 
-#endif //DZ
+#endif //MATRIX_MULTIPLICATION
 
 /*
 Функции — это блоки кода, выполняющие определенные операции.
