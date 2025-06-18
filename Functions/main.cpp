@@ -289,10 +289,19 @@ int main()
 #endif //MATRIX_MULTIPLICATION
 
 #ifdef UROK
+int Add(int a, int b)
+{
+    int c = a + b;
+    return c;
+}
+
 void main() 
 {
     setlocale(LC_ALL, "");
-
+    int a, b;
+    cout << "Введите два числа: "; cin >> a >> b;
+    int c = Add(a, b);
+    cout << a << "+" << b << " = " << c << endl;
 }
 #endif //UROK
 
