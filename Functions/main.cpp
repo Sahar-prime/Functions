@@ -8,6 +8,7 @@ using namespace std;
 //#define TASK_4
 //#define SARRUS_METHOD
 //#define MATRIX_MULTIPLICATION
+#define UROK
 
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
@@ -287,6 +288,13 @@ int main()
 
 #endif //MATRIX_MULTIPLICATION
 
+#ifdef UROK
+void main() 
+{
+    setlocale(LC_ALL, "");
+
+}
+#endif //UROK
 
 /*
 Функции — это блоки кода, выполняющие определенные операции.
