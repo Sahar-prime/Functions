@@ -301,7 +301,7 @@ void main()
     int a, b;
     cout << "Введите два числа: "; cin >> a >> b;
     int c = Add(a, b);
-    cout << a << "+" << b << " = " << c << endl;
+    cout << a << " + " << b << " = " << c << endl;
 }
 #endif //UROK
 
