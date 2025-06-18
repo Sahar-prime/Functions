@@ -307,7 +307,7 @@ int Mul(int num_1, int num_2)
 
 int Div(int num_1, int num_2) 
 {
-    return num_1 * num_2;
+    return num_1 / num_2;
 }
 
 void main() 
