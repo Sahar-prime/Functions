@@ -8,7 +8,7 @@ using namespace std;
 //#define TASK_4
 //#define SARRUS_METHOD
 //#define MATRIX_MULTIPLICATION
-#define UROK
+//#define UROK
 
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
