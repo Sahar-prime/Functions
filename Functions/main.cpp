@@ -2,12 +2,12 @@
 #include <ctime>
 using namespace std;
 
-//#define MATRIX_MULTIPLICATION
 //#define TASK_1
 //#define TASK_2
 //#define TASK_3
 //#define TASK_4
 //#define SARRUS_METHOD
+//#define MATRIX_MULTIPLICATION
 
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
