@@ -289,10 +289,25 @@ int main()
 #endif //MATRIX_MULTIPLICATION
 
 #ifdef UROK
-int Add(int a, int b)
+int Add(int num_1, int num_2)
 {
-    int c = a + b;
-    return c;
+    int result = num_1 + num_2;
+    return result;
+}
+
+int Sub(int num_1, int num_2) 
+{
+    return num_1 - num_2;
+}
+
+int Mul(int num_1, int num_2) 
+{
+    return num_1 * num_2;
+}
+
+int Div(int num_1, int num_2) 
+{
+    return num_1 * num_2;
 }
 
 void main() 
@@ -300,8 +315,10 @@ void main()
     setlocale(LC_ALL, "");
     int a, b;
     cout << "Введите два числа: "; cin >> a >> b;
-    int c = Add(a, b);
-    cout << a << " + " << b << " = " << c << endl;
+    cout << a << " + " << b << " = " << Add(a, b) << endl;
+    cout << a << " - " << b << " = " << Sub(a, b) << endl;
+    cout << a << " * " << b << " = " << Mul(a, b) << endl;
+    cout << a << " : " << b << " = " << Div(a, b) << endl;
 }
 #endif //UROK
 
