@@ -8,7 +8,8 @@ using namespace std;
 //#define TASK_4
 //#define SARRUS_METHOD
 //#define MATRIX_MULTIPLICATION
-//#define UROK
+//#define CALC
+//#define DZ
 
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
@@ -288,28 +289,7 @@ int main()
 
 #endif //MATRIX_MULTIPLICATION
 
-#ifdef UROK
-int Add(int num_1, int num_2)
-{
-    int result = num_1 + num_2;
-    return result;
-}
-
-int Sub(int num_1, int num_2) 
-{
-    return num_1 - num_2;
-}
-
-int Mul(int num_1, int num_2) 
-{
-    return num_1 * num_2;
-}
-
-double Div(int num_1, int num_2) 
-{
-    return (double)num_1 / num_2;
-}
-
+#ifdef CALC
 void main() 
 {
     setlocale(LC_ALL, "");
@@ -319,8 +299,66 @@ void main()
     cout << a << " - " << b << " = " << Sub(a, b) << endl;
     cout << a << " * " << b << " = " << Mul(a, b) << endl;
     cout << a << " : " << b << " = " << Div(a, b) << endl;
+
 }
-#endif //UROK
+
+int Add(int num_1, int num_2)
+{
+    int result = num_1 + num_2;
+    return result;
+}
+
+int Sub(int num_1, int num_2)
+{
+    return num_1 - num_2;
+}
+
+int Mul(int num_1, int num_2)
+{
+    return num_1 * num_2;
+}
+
+double Div(int num_1, int num_2)
+{
+    return (double)num_1 / num_2;
+}
+#endif //CALC
+
+#ifdef DZ
+// Функция для вычисления факториала числа
+unsigned long long Factorial(unsigned int n) 
+{
+    if (n == 0 || n == 1)
+    {
+        return 1;
+    }
+    return n * Factorial(n - 1);
+}
+
+// Функция для возведения числа в степень
+double Power(double base, unsigned int exponent) 
+{
+    double result = 1.0;
+    for (unsigned int i = 0; i < exponent; ++i) 
+    {
+        result *= base;
+    }
+    return result;
+}
+
+int main() 
+{
+    setlocale(LC_ALL, "");
+    // Пример использования функции Factorial
+    unsigned int number = 5;
+    cout << "Факториал " << number << " равен " << Factorial(number) << endl;
+
+    // Пример использования функции Power
+    double base = 2.0;
+    unsigned int exponent = 3;
+    cout << base << " в степени " << exponent << " равно " << Power(base, exponent) << endl;
+}
+#endif //DZ
 
 /*
 Функции — это блоки кода, выполняющие определенные операции.
