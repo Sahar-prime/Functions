@@ -24,7 +24,7 @@ void main()
 	cout << "Отсортированный массив:" << endl;
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Средне-Арифметическое: " << Avarage(arr, n) << endl;
+	cout << "Средне-Арифметическое элементов массива: " << Avarage(arr, n) << endl;
 }
 #endif //ARRAYS
 
