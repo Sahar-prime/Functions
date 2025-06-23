@@ -8,6 +8,7 @@ using namespace std;
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void Print(int arr[], const int n);
 void Sort(int arr[], const int n);
+int Sum(int arr[], const int n);
 
 #ifdef ARRAYS
 void main()
@@ -15,12 +16,13 @@ void main()
 	setlocale(LC_ALL, "");
 	const int n = 10;
 	int arr[n];
-	FillRand(arr, n, 100, 1000);
+	FillRand(arr, n);
 	cout << "Оригинальный массив:" << endl;
 	Print(arr, n);
 	Sort(arr, n);
 	cout << "Отсортированный массив:" << endl;
 	Print(arr, n);
+	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
 }
 #endif //ARRAYS
 
@@ -55,6 +57,16 @@ void Sort(int arr[], const int n)
 			}
 		}
 	}
+}
+
+int Sum(int arr[], const int n) 
+{
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+	{
+		sum += arr[i];
+	}
+	return sum;
 }
 
 /*
