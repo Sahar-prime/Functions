@@ -9,6 +9,7 @@ void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void Print(int arr[], const int n);
 void Sort(int arr[], const int n);
 int Sum(int arr[], const int n);
+double Avarage(int arr[], const int n);
 
 #ifdef ARRAYS
 void main()
@@ -23,6 +24,7 @@ void main()
 	cout << "Отсортированный массив:" << endl;
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
+	cout << "Средне-Арифметическое: " << Avarage(arr, n) << endl;
 }
 #endif //ARRAYS
 
@@ -67,6 +69,11 @@ int Sum(int arr[], const int n)
 		sum += arr[i];
 	}
 	return sum;
+}
+
+double Avarage(int arr[], const int n) 
+{
+	return (double)Sum(arr, n) / n;
 }
 
 /*
