@@ -5,12 +5,21 @@ using namespace std;
 
 //Single Responibility Principle - принцип единой ответственности.
 
+const int ROWS = 3;
+const int COLS = 4;
+
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
 void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(int arr[][COLS], const int ROWS, const int COLS);
+
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
+
 void Sort(int arr[], const int n);
+
 int Sum(int arr[], const int n);
+
 double Avarage(int arr[], const int n);
 
 #ifdef ARRAYS
@@ -26,12 +35,17 @@ void main()
 	cout << "Отсортированный массив:" << endl;
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Средне-Арифметическое элементов массива: " << Avarage(arr, n) << endl;
+	cout << "Средне-Арифметическое элементов массива: " << Avarage(arr, n) << endl << endl;
 
 	const int D_SIZE = 8;
 	double d_arr[D_SIZE];
 	FillRand(d_arr, D_SIZE);
 	Print(d_arr, D_SIZE);
+	cout << endl;
+
+	int i_arr_2[ROWS][COLS];
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
 }
 #endif //ARRAYS
 
@@ -44,9 +58,22 @@ void FillRand(int arr[], const int n, int minRand, int maxRand)
 }
 void FillRand(double arr[], const int n, int minRand, int maxRand)
 {
+	minRand *= 100;
+	maxRand *= 100;
 	for (int i = 0; i < n; i++) 
 	{
 		arr[i] = minRand + rand() % (maxRand - minRand + 1);
+		arr[i] /= 100;
+	}
+}
+void FillRand(int arr[][COLS], const int ROWS, const int COLS) 
+{
+	for (int i = 0; i < ROWS; i++) 
+	{
+		for (int j = 0; j < COLS; j++) 
+		{
+			arr[i][j] = rand() % 100;
+		}
 	}
 }
 
@@ -63,6 +90,18 @@ void Print(double arr[], const int n)
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS) 
+{
+	for (int i = 0; i < ROWS; i++) 
+	{
+		for (int j = 0; j < COLS; j++) 
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
 	}
 	cout << endl;
 }
