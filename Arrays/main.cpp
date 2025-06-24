@@ -1,7 +1,9 @@
 #include <iostream>
+#include <cmath>    //Для функции pow()
+
 using namespace std;
 
-//#define ARRAYS
+#define ARRAYS
 
 //Single Responibility Principle - принцип единой ответственности.
 
@@ -9,7 +11,7 @@ const int ROWS = 3;
 const int COLS = 4;
 
 void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
-void FillRand(double arr[], const int n, int minRand = 0, int maxRand = 100);
+void FillRand(double arr[], const int n, int minRand, int maxRand, int decimalPlaces = 2);
 void FillRand(int arr[][COLS], const int ROWS, const int COLS);
 
 void Print(int arr[], const int n);
@@ -39,7 +41,7 @@ void main()
 
 	const int D_SIZE = 8;
 	double d_arr[D_SIZE];
-	FillRand(d_arr, D_SIZE);
+	FillRand(d_arr, D_SIZE, 0, 100, 3); // Updated to include decimalPlaces
 	Print(d_arr, D_SIZE);
 	cout << endl;
 
@@ -56,14 +58,15 @@ void FillRand(int arr[], const int n, int minRand, int maxRand)
 		arr[i] = minRand + rand() % (maxRand - minRand + 1);
 	}
 }
-void FillRand(double arr[], const int n, int minRand, int maxRand)
+void FillRand(double arr[], const int n, int minRand, int maxRand, int decimalPlaces)
 {
-	minRand *= 100;
-	maxRand *= 100;
-	for (int i = 0; i < n; i++) 
+	int multiplier = pow(10, decimalPlaces);
+	minRand *= multiplier;
+	maxRand *= multiplier;
+	for (int i = 0; i < n; i++)
 	{
 		arr[i] = minRand + rand() % (maxRand - minRand + 1);
-		arr[i] /= 100;
+		arr[i] /= multiplier;
 	}
 }
 void FillRand(int arr[][COLS], const int ROWS, const int COLS) 
