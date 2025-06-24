@@ -3,7 +3,7 @@
 
 using namespace std;
 
-#define ARRAYS
+//#define ARRAYS
 
 //Single Responibility Principle - принцип единой ответственности.
 
@@ -24,6 +24,9 @@ int Sum(int arr[], const int n);
 
 double Avarage(int arr[], const int n);
 
+int minValueIn(int arr[], const int n);
+int maxValueIn(int arr[], const int n);
+
 #ifdef ARRAYS
 void main()
 {
@@ -37,7 +40,9 @@ void main()
 	cout << "Отсортированный массив:" << endl;
 	Print(arr, n);
 	cout << "Сумма элементов массива: " << Sum(arr, n) << endl;
-	cout << "Средне-Арифметическое элементов массива: " << Avarage(arr, n) << endl << endl;
+	cout << "Средне-Арифметическое элементов массива: " << Avarage(arr, n) << endl;
+	cout << "Минимальное значение в массиве: " << minValueIn(arr, n) << endl;
+	cout << "Максимальное значение в массиве: " << maxValueIn(arr, n) << endl << endl;
 
 	const int D_SIZE = 8;
 	double d_arr[D_SIZE];
@@ -138,6 +143,25 @@ int Sum(int arr[], const int n)
 double Avarage(int arr[], const int n) 
 {
 	return (double)Sum(arr, n) / n;
+}
+
+int minValueIn(int arr[], const int n) {
+	int minVal = arr[0]; // Assume first element is the minimum initially
+	for (int i = 1; i < n; i++) {
+		if (arr[i] < minVal) {
+			minVal = arr[i];
+		}
+	}
+	return minVal;
+}
+int maxValueIn(int arr[], const int n) {
+	int maxVal = arr[0]; // Assume first element is the maximum initially
+	for (int i = 1; i < n; i++) {
+		if (arr[i] > maxVal) {
+			maxVal = arr[i];
+		}
+	}
+	return maxVal;
 }
 
 /*
