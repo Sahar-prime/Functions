@@ -1,18 +1,12 @@
 ﻿#include <iostream>
 #include <cmath>    //Для функции pow()
+#include"Const.h"
+#include "FillRand.h"
+#include "stdafx.h"
 
-using namespace std;
-
-//#define ARRAYS
+#define ARRAYS
 
 //Single Responibility Principle - принцип единой ответственности.
-
-const int ROWS = 3;
-const int COLS = 4;
-
-void FillRand(int arr[], const int n, int minRand = 0, int maxRand = 100);
-void FillRand(double arr[], const int n, int minRand, int maxRand, int decimalPlaces = 2);
-void FillRand(int arr[][COLS], const int ROWS, const int COLS);
 
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
