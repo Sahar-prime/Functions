@@ -1,20 +1,14 @@
 ﻿#include <iostream>
-#include <cmath>    //Для функции pow()
 #include"Const.h"
 #include "FillRand.h"
+#include "Print.h"
 #include "stdafx.h"
+#include "Sort.h"
+#include "Sum.h"
 
 #define ARRAYS
 
 //Single Responibility Principle - принцип единой ответственности.
-
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
-
-void Sort(int arr[], const int n);
-
-int Sum(int arr[], const int n);
 
 double Avarage(int arr[], const int n);
 
@@ -49,90 +43,6 @@ void main()
 	Print(i_arr_2, ROWS, COLS);
 }
 #endif //ARRAYS
-
-void FillRand(int arr[], const int n, int minRand, int maxRand)
-{
-	for (int i = 0; i < n; i++) 
-	{
-		arr[i] = minRand + rand() % (maxRand - minRand + 1);
-	}
-}
-void FillRand(double arr[], const int n, int minRand, int maxRand, int decimalPlaces)
-{
-	int multiplier = pow(10, decimalPlaces);
-	minRand *= multiplier;
-	maxRand *= multiplier;
-	for (int i = 0; i < n; i++)
-	{
-		arr[i] = minRand + rand() % (maxRand - minRand + 1);
-		arr[i] /= multiplier;
-	}
-}
-void FillRand(int arr[][COLS], const int ROWS, const int COLS) 
-{
-	for (int i = 0; i < ROWS; i++) 
-	{
-		for (int j = 0; j < COLS; j++) 
-		{
-			arr[i][j] = rand() % 100;
-		}
-	}
-}
-
-void Print(int arr[], const int n) 
-{
-	for (int i = 0; i < n; i++) 
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++)
-	{
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS) 
-{
-	for (int i = 0; i < ROWS; i++) 
-	{
-		for (int j = 0; j < COLS; j++) 
-		{
-			cout << arr[i][j] << "\t";
-		}
-		cout << endl;
-	}
-	cout << endl;
-}
-
-void Sort(int arr[], const int n)
-{
-	for (int i = 0; i < n - 1; i++)
-	{
-		for (int j = 0; j < n - i - 1; j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
-}
-
-int Sum(int arr[], const int n) 
-{
-	int sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
-	return sum;
-}
 
 double Avarage(int arr[], const int n) 
 {
