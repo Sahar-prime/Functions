@@ -28,7 +28,7 @@ int minValueIn(int arr[], const int n);
 int maxValueIn(int arr[], const int n);
 
 #ifdef ARRAYS
-void main()
+int main()
 {
 	setlocale(LC_ALL, "");
 	const int n = 10;

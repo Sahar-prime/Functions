@@ -11,6 +11,24 @@ using namespace std;
 //#define CALC
 //#define DZ
 
+int Add(int num_1, int num_2)
+{
+    int result = num_1 + num_2;
+    return result;
+}
+int Sub(int num_1, int num_2)
+{
+    return num_1 - num_2;
+}
+int Mul(int num_1, int num_2)
+{
+    return num_1 * num_2;
+}
+double Div(int num_1, int num_2)
+{
+    return (double)num_1 / num_2;
+}
+
 #ifdef TASK_1
 void findMinMax(const int array[][3], int rows, int& min, int& max) 
 {
@@ -300,27 +318,6 @@ void main()
     cout << a << " * " << b << " = " << Mul(a, b) << endl;
     cout << a << " : " << b << " = " << Div(a, b) << endl;
 
-}
-
-int Add(int num_1, int num_2)
-{
-    int result = num_1 + num_2;
-    return result;
-}
-
-int Sub(int num_1, int num_2)
-{
-    return num_1 - num_2;
-}
-
-int Mul(int num_1, int num_2)
-{
-    return num_1 * num_2;
-}
-
-double Div(int num_1, int num_2)
-{
-    return (double)num_1 / num_2;
 }
 #endif //CALC
 
