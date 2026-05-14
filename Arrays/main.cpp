@@ -6,7 +6,7 @@
 #include "Sort.h"
 #include "Sum.h"
 
-#define ARRAYS
+//#define ARRAYS
 
 //Single Responibility Principle - принцип единой ответственности.
 
